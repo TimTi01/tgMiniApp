@@ -14,11 +14,11 @@ import car from "../static/car.gif"
 
 export const router = createBrowserRouter([
     {
-        path: "/tg-bot-pj-test/",
+        path: "/tgMiniApp/",
         element: <HomePage/>,
         children: [
             {
-                path: "/tg-bot-pj-test/",
+                path: "/tgMiniApp/",
                 element: <FillingStationData />
             },
             {
@@ -36,11 +36,11 @@ export const router = createBrowserRouter([
         ]
     },
     {
-        path: "/tg-bot-pj-test/payment",
+        path: "/tgMiniApp/payment",
         element: <Payment />,
     },
     {
-        path: "/tg-bot-pj-test/waitingForPayment",
+        path: "/tgMiniApp/waitingForPayment",
         element: <LastPage 
                     gifPath={flyMoney}
                     title={'Секунду, происходит оплата...'}
@@ -48,21 +48,21 @@ export const router = createBrowserRouter([
                  />,
     },
     {
-        path: "/tg-bot-pj-test/waitingForPayment-2",
+        path: "/tgMiniApp/waitingForPayment-2",
         element: <LastPage 
                     gifPath={finger}
                     title={'Вставьте пистолет \n\n в бак и начните заправку'}
                  />,
     },
     {
-        path: "/tg-bot-pj-test/waitingForPayment-3",
+        path: "/tgMiniApp/waitingForPayment-3",
         element: <LastPage 
                     gifPath={star}
                     title={'Заливаем топливо…'}
                  />,
     },
     {
-        path: "/tg-bot-pj-test/waitingForPayment-4",
+        path: "/tgMiniApp/waitingForPayment-4",
         element: <LastPage 
                     gifPath={car}
                     title={'Всё готово! \n\n Счастливого пути!'}
@@ -71,5 +71,5 @@ export const router = createBrowserRouter([
                  />,
     }
 ], {
-    // basename: "/tg-bot-pj-test/"
+    // basename: "/tgMiniApp/"
 });

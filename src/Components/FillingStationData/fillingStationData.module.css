@@ -1,0 +1,28 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 142px;
+    padding: 0 16px;
+}
+
+.stationNumber {
+    font-size: 21px;
+    font-weight: 580;
+}
+
+.stationAddress {
+    color: #8E8E93;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px 24px 0 24px;
+    text-align: center;
+}
+
+.distance {
+    color: #8E8E93;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 16px 
+}

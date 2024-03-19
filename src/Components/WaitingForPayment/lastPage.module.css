@@ -1,0 +1,35 @@
+.waitingForPaymentWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 644px;
+    border: 1px solid #8e8e9352;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 10px;
+    width: 100%;
+}
+
+.gif {
+    height: 128px;
+    width: 128px;
+}
+
+.title {
+    font-size: 21px;
+    font-weight: 590;
+    text-align: center;
+}
+
+.subTitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8E8E93;
+}

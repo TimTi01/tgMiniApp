@@ -1,0 +1,29 @@
+.alertWrap {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    background: #2D2D2DCC;
+    border-radius: 12px;
+    padding: 12px;
+    gap: 20px;
+}
+
+.icon {
+    height: 30px;
+    width: 50px;
+    /* background: #fff; */
+}
+
+.alertText {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.button {
+    font-size: 17px;
+    font-weight: 400;
+    color: #5AC8FA;
+    background: none;
+    border: none;
+}

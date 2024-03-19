@@ -1,0 +1,11 @@
+.buttonGrid {
+    width: 114px;
+    height: 84px;
+    color: #007AFF;
+    background: #007AFF1A;
+    border-radius: 14px;
+    border: none;
+    font-size: 17px;
+    font-weight: 590;
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+.paymentWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 142px;
+    padding: 20px 16px;
+    background: #efeff4;
+}
+
+.paymentTitle {
+    width: 100%;
+    font-size: 13px;
+    font-weight: 400;
+    color: #8E8E93;    
+}

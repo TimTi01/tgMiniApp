@@ -1,0 +1,25 @@
+.priceDisplayWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 64px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 14px;
+}
+
+.liters {
+    font-size: 21px;
+    font-weight: 590;
+}
+
+.rubles {
+    font-size: 21px;
+    font-weight: 590;
+}
+
+.slash {
+    color: #8E8E93;
+    font-size: 39px;
+    font-weight: 100;
+}

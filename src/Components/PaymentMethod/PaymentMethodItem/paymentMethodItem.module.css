@@ -1,0 +1,28 @@
+.paymentMethodItemWrap {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #efeff4;
+    gap: 13px;
+}
+
+.paymentMethodItemWrap:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.title {
+    font-size: 17px;
+    font-weight: 400;
+    flex-grow: 1;
+}
+
+.cardLogo {
+
+}
+
+.numbers {
+    font-size: 17px;
+    font-weight: 400;
+    color: #8E8E93;
+}

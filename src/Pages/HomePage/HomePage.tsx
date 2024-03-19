@@ -1,17 +1,17 @@
 import { FC } from "react"
 import { MyMap } from "../../Components/MyMap"
 import { useGeoLocation } from "../../hooks/hooks";
-import { BackButton, MainButton, useShowPopup } from "@vkruglikov/react-telegram-web-app";
+import { BackButton, MainButton } from "@vkruglikov/react-telegram-web-app";
 import { Link, Outlet } from "react-router-dom";
 
 export const HomePage: FC = () => {
     const geo = useGeoLocation(); 
     let myGeo = [geo.coordinates?.lat, geo.coordinates?.lng]
-    const showPopup = useShowPopup();
+    // const showPopup = useShowPopup();
 
-    const handleClick = () => {
-        showPopup({message: 'Hello, I am popup'});
-    }
+    // const handleClick = () => {
+    //     showPopup({message: 'Hello, I am popup'});
+    // }
 
     return (
         <>
@@ -24,10 +24,7 @@ export const HomePage: FC = () => {
             <BackButton/>
             <Outlet />
 
-            <MainButton 
-                text="Заправиться тут" 
-                onClick={handleClick} 
-            />
+            <MainButton text="test" />
         </>
     )
 }

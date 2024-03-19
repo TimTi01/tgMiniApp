@@ -2,8 +2,9 @@ import { FC } from 'react'
 import { SwitchItem } from '../SwitchItem/SwitchItem'
 import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import s from './switchComponent.module.css'
+import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app'
 
 const items = [
   {type: 'oil', oilType: '95+', price: 50},
@@ -14,6 +15,7 @@ const items = [
 export const SwitchComponent: FC = () => {
   let location = useLocation();
   let lastChar = location.pathname[location.pathname.length - 1];
+  const navigate = useNavigate();
 
   return (
     <div className={s.switchWrap}>
@@ -35,6 +37,12 @@ export const SwitchComponent: FC = () => {
               />
           ))
         }
+
+        <BackButton onClick={() => navigate(-1)}/>
+        <MainButton 
+            text="Заправиться тут" 
+            onClick={() => navigate("/tgMiniApp/2")}
+        />
     </div>
   )
 }

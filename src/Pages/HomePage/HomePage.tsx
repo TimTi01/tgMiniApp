@@ -1,21 +1,20 @@
 import { FC } from "react"
 import { MyMap } from "../../Components/MyMap"
 import { useGeoLocation } from "../../hooks/hooks";
-import { BackButton, MainButton, useShowPopup } from "@vkruglikov/react-telegram-web-app";
-import { Link, Outlet } from "react-router-dom";
+import { BackButton, MainButton } from "@vkruglikov/react-telegram-web-app";
+import { Outlet, useNavigate } from "react-router-dom";
 
 export const HomePage: FC = () => {
     const geo = useGeoLocation(); 
     let myGeo = [geo.coordinates?.lat, geo.coordinates?.lng]
-    const showPopup = useShowPopup();
+    const navigate = useNavigate();
 
     const handleClick = () => {
-        showPopup({message: 'Hello, I am popup'});
+        navigate("/tgMiniApp/1")
     }
 
     return (
         <>
-            <Link to="/tgMiniApp/1">==1==</Link>
             <MyMap 
                 geo={geo} 
                 myGeo={myGeo} 

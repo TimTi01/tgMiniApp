@@ -2,7 +2,7 @@ import { FC } from "react"
 import { MyMap } from "../../Components/MyMap"
 import { useGeoLocation } from "../../hooks/hooks";
 import { MainButton, useShowPopup } from "@vkruglikov/react-telegram-web-app";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export const HomePage: FC = () => {
     const geo = useGeoLocation();
@@ -15,6 +15,7 @@ export const HomePage: FC = () => {
 
     return (
         <>
+            <Link to="/tgMiniApp/1">==1==</Link>
             <MyMap 
                 geo={geo} 
                 myGeo={myGeo} 

@@ -40,7 +40,7 @@ export const SwitchComponent: FC = () => {
 
         <BackButton onClick={() => navigate(-1)}/>
         <MainButton 
-            text="Заправиться тут" 
+            text="Дальше" 
             onClick={() => navigate("/tgMiniApp/2")}
         />
     </div>

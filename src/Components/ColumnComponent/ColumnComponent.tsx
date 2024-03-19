@@ -1,9 +1,10 @@
 import { FC } from 'react'
 import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import s from './columnComponent.module.css';
 import { SwitchItem } from '../SwitchItem/SwitchItem';
+import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app';
 
 // Нужно подправить название типов
 const items = [
@@ -17,6 +18,7 @@ const items = [
 export const ColumnComponent: FC = ({}) => {
     let location = useLocation();
     let lastChar = location.pathname[location.pathname.length - 1];
+    const navigate = useNavigate();
 
     return (
         <div className={s.columnWrap}>
@@ -31,6 +33,12 @@ export const ColumnComponent: FC = ({}) => {
                     />
                 ))
             }
+
+            <BackButton onClick={() => navigate(-1)}/>
+            <MainButton 
+                text="Дальше" 
+                onClick={() => navigate("/tgMiniApp/3")}
+            />
         </div>
     )
 }

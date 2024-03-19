@@ -1,15 +1,17 @@
 import { FC } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { PageNumber } from '../PageNumber/PageNumber';
 import { Title } from '../Title/Title';
 import { GridButtons } from '../GridButtons/GridButtons';
 import { PriceDisplay } from '../PriceDisplay/PriceDisplay';
 import { Range } from '../Range/Range';
 import s from './sumAndLiters.module.css'
+import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app';
 
 export const SumAndLiters:FC = () => {
     let location = useLocation();
     let lastChar = location.pathname[location.pathname.length - 1];
+    const navigate = useNavigate();
     
     return (
         <div className={s.sumAndLitersWrap}>
@@ -18,6 +20,12 @@ export const SumAndLiters:FC = () => {
             <PriceDisplay />
             <Range />
             <GridButtons />
+
+            <BackButton onClick={() => navigate(-1)}/>
+            <MainButton 
+                text="К оплате" 
+                onClick={() => navigate("/tgMiniApp/waitingForPayment")}
+            />
         </div>
     )
 }

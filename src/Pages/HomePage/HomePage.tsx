@@ -9,11 +9,9 @@ export const HomePage: FC = () => {
     let myGeo = [geo.coordinates?.lat, geo.coordinates?.lng]
     const showPopup = useShowPopup();
 
-    showPopup({message: 'Hello, I am popup'});
-
-    // const handleClick = () => {
-        // showPopup({message: 'Hello, I am popup'});
-    // }
+    const handleClick = () => {
+        showPopup({message: 'Hello, I am popup'});
+    }
 
     return (
         <>
@@ -26,7 +24,10 @@ export const HomePage: FC = () => {
             <BackButton/>
             <Outlet />
 
-            <MainButton text="test" />
+            <MainButton 
+                text="Заправиться тут" 
+                onClick={handleClick}
+            />
         </>
     )
 }

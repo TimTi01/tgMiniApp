@@ -1,11 +1,11 @@
 import { FC } from "react"
 import { MyMap } from "../../Components/MyMap"
 import { useGeoLocation } from "../../hooks/hooks";
-import { MainButton, useShowPopup } from "@vkruglikov/react-telegram-web-app";
+import { BackButton, MainButton, useShowPopup } from "@vkruglikov/react-telegram-web-app";
 import { Link, Outlet } from "react-router-dom";
 
 export const HomePage: FC = () => {
-    const geo = useGeoLocation();
+    const geo = useGeoLocation(); 
     let myGeo = [geo.coordinates?.lat, geo.coordinates?.lng]
     const showPopup = useShowPopup();
 
@@ -21,7 +21,7 @@ export const HomePage: FC = () => {
                 myGeo={myGeo} 
                 pointCoords={[59.940375, 30.313816]}
             />
-
+            <BackButton/>
             <Outlet />
 
             <MainButton 

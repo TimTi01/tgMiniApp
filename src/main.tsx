@@ -5,7 +5,11 @@ import './index.css'
 import { WebAppProvider } from '@vkruglikov/react-telegram-web-app'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <WebAppProvider options={{}}>
+  <WebAppProvider   
+    options={{
+      smoothButtonsTransition: true,
+    }}
+  >
     <RouterProvider router={router} />
   </WebAppProvider>
 )

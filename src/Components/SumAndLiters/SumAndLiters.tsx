@@ -6,7 +6,7 @@ import { GridButtons } from '../GridButtons/GridButtons';
 import { PriceDisplay } from '../PriceDisplay/PriceDisplay';
 import { Range } from '../Range/Range';
 import s from './sumAndLiters.module.css'
-import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app';
+import { BackButton } from '@vkruglikov/react-telegram-web-app';
 import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton';
 
 export const SumAndLiters:FC = () => {
@@ -14,6 +14,14 @@ export const SumAndLiters:FC = () => {
     let lastChar = location.pathname[location.pathname.length - 1];
     const navigate = useNavigate();
     
+    Telegram.WebApp.MainButton.show();
+    Telegram.WebApp.MainButton.setParams({
+        text: 'К оплате',
+    });
+    Telegram.WebApp.BackButton.onClick(function() {
+        navigate("/tgMiniApp/payment")
+    });
+
     return (
         <div className={s.sumAndLitersWrap}>
             <PageNumber number={`${lastChar}/3`}/>
@@ -28,10 +36,10 @@ export const SumAndLiters:FC = () => {
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
 
             <BackButton onClick={() => navigate(-1)}/>
-            <MainButton 
+            {/* <MainButton 
                 text="К оплате" 
                 onClick={() => navigate("/tgMiniApp/waitingForPayment")}
-            />
+            /> */}
         </div>
     )
 }

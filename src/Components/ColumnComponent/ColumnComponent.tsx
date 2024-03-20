@@ -4,7 +4,7 @@ import { Title } from '../Title/Title'
 import { useLocation, useNavigate } from 'react-router-dom';
 import s from './columnComponent.module.css';
 import { SwitchItem } from '../SwitchItem/SwitchItem';
-import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app';
+import { BackButton } from '@vkruglikov/react-telegram-web-app';
 import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton';
 
 // Нужно подправить название типов
@@ -20,6 +20,14 @@ export const ColumnComponent: FC = ({}) => {
     let location = useLocation();
     let lastChar = location.pathname[location.pathname.length - 1];
     const navigate = useNavigate();
+
+    Telegram.WebApp.MainButton.show();
+    Telegram.WebApp.MainButton.setParams({
+        text: 'Дальше2',
+    });
+    Telegram.WebApp.BackButton.onClick(function() {
+        navigate("/tgMiniApp/3")
+    });
 
     return (
         <div className={s.columnWrap}>
@@ -41,10 +49,10 @@ export const ColumnComponent: FC = ({}) => {
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
 
             <BackButton onClick={() => navigate(-1)}/>
-            <MainButton 
+            {/* <MainButton 
                 text="Дальше" 
                 onClick={() => navigate("/tgMiniApp/3")}
-            />
+            /> */}
         </div>
     )
 }

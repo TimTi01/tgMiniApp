@@ -12,24 +12,14 @@ export const HomePage: FC = () => {
     const location = useLocation()
     const [state, setState] = useState(0)
 
-    console.log('location: ', location);
-    console.log('location.pathname: ', location.pathname);
-
-
     Telegram.WebApp.MainButton.show();
     Telegram.WebApp.MainButton.setParams({
-      text: 'TEST1!',
+      text: 'Заправиться тут1',
     });
     Telegram.WebApp.MainButton.onClick(function() {
-      // Переходим на предыдущую страницу
-    
       setState(state + 1)
       navigate("/tgMiniApp/1")
     });
-
-    // const handleClick = () => {
-    //     navigate("/tgMiniApp/1")
-    // }
 
     return (
         <>

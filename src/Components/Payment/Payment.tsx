@@ -3,12 +3,20 @@ import s from './payment.module.css'
 import { TotalPayable } from "./TotalPayable/TotalPayable"
 import { PaymentMethod } from "../PaymentMethod/PaymentMethod"
 import { Alert } from "../Alert/Alert"
-import { BackButton, MainButton } from "@vkruglikov/react-telegram-web-app"
+import { BackButton } from "@vkruglikov/react-telegram-web-app"
 import { useNavigate } from "react-router-dom"
 import { BackRouteButton, NextRouteButton } from "../TestRouteButton/TestRouteButton"
 
 export const Payment: FC = () => {
     const navigate = useNavigate();
+
+    Telegram.WebApp.MainButton.show();
+    Telegram.WebApp.MainButton.setParams({
+        text: 'Оплатить  1 977,10 ₽',
+    });
+    Telegram.WebApp.BackButton.onClick(function() {
+        navigate("/tgMiniApp/waitingForPayment")
+    });
 
     return (
         <div className={s.paymentWrap}>
@@ -23,10 +31,10 @@ export const Payment: FC = () => {
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
 
             <BackButton onClick={() => navigate(-1)}/>
-            <MainButton 
+            {/* <MainButton 
                 text="Оплатить 1977 руб." 
                 onClick={() => navigate("/tgMiniApp/waitingForPayment")}
-            />
+            /> */}
         </div>
     )
 }

@@ -25,10 +25,9 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
 
   Telegram.WebApp.MainButton.show();
   Telegram.WebApp.MainButton.setParams({
-    text: 'TEST',
+    text: 'Дальше1',
   });
   Telegram.WebApp.BackButton.onClick(function() {
-    // Переходим на предыдущую страницу
     navigate("/tgMiniApp/2")
   });
 

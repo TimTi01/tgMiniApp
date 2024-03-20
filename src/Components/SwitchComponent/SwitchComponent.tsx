@@ -23,7 +23,6 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
   let lastChar = location.pathname[location.pathname.length - 1];
   const navigate = useNavigate();
 
-
   Telegram.WebApp.MainButton.show();
   Telegram.WebApp.MainButton.setParams({
     text: 'TEST',

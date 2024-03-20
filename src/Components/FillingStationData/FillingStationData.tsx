@@ -2,7 +2,7 @@ import { FC } from 'react'
 import s from './fillingStationData.module.css'
 import { BackButton } from '@vkruglikov/react-telegram-web-app'
 import { useLocation, useNavigate } from 'react-router-dom';
-import { BackRouteButton } from '../TestRouteButton/TestRouteButton';
+import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton';
 
 export const FillingStationData: FC = () => {
   const navigate = useNavigate();
@@ -33,8 +33,11 @@ export const FillingStationData: FC = () => {
           ~0,1км
         </div>
 
-        {/* BackRouteButton - тестовая кнопка */}
+        {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
+        <NextRouteButton navigateLink="/tgMiniApp/1"/>
         { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+        {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
+        { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
         { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 
         {/* <MainButton 

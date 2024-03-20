@@ -23,7 +23,7 @@ export const HomePage: FC = () => {
       // Переходим на предыдущую страницу
       navigate("/tgMiniApp/1")
     });
-    
+
     // const handleClick = () => {
     //     navigate("/tgMiniApp/1")
     // }
@@ -43,6 +43,7 @@ export const HomePage: FC = () => {
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
             { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 
+            <div>{location.pathname}</div>
             {/* <MainButton 
                 text="Заправиться тут" 
                 onClick={handleClick}

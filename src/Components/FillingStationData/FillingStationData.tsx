@@ -1,10 +1,12 @@
 import { FC } from 'react'
 import s from './fillingStationData.module.css'
-import { MainButton } from '@vkruglikov/react-telegram-web-app'
-import { useNavigate } from 'react-router-dom';
+import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app'
+import { useLocation, useNavigate } from 'react-router-dom';
+import { BackRouteButton } from '../TestRouteButton/TestRouteButton';
 
 export const FillingStationData: FC = () => {
   const navigate = useNavigate();
+  const location = useLocation()
 
   const handleClick = () => {
     navigate("/tgMiniApp/1")
@@ -21,6 +23,10 @@ export const FillingStationData: FC = () => {
         <div className={s.distance}>
           ~0,1км
         </div>
+
+        {/* BackRouteButton - тестовая кнопка */}
+        { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+        { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 
         <MainButton 
           text="Заправиться тут" 

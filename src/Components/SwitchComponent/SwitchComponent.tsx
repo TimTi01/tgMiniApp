@@ -5,6 +5,7 @@ import { Title } from '../Title/Title'
 import { useLocation, useNavigate } from 'react-router-dom'
 import s from './switchComponent.module.css'
 import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app'
+import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton'
 
 const items = [
   {type: 'oil', oilType: '95+', price: 50},
@@ -38,6 +39,10 @@ export const SwitchComponent: FC = () => {
           ))
         }
 
+        {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
+        <NextRouteButton navigateLink="/tgMiniApp/2"/>
+        { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+        
         <BackButton onClick={() => navigate(-1)}/>
         <MainButton 
             text="Дальше" 

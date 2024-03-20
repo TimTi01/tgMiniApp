@@ -7,6 +7,7 @@ import { PriceDisplay } from '../PriceDisplay/PriceDisplay';
 import { Range } from '../Range/Range';
 import s from './sumAndLiters.module.css'
 import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app';
+import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton';
 
 export const SumAndLiters:FC = () => {
     let location = useLocation();
@@ -20,6 +21,11 @@ export const SumAndLiters:FC = () => {
             <PriceDisplay />
             <Range />
             <GridButtons />
+
+            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
+            <NextRouteButton navigateLink="/tgMiniApp/payment"/>
+            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
 
             <BackButton onClick={() => navigate(-1)}/>
             <MainButton 

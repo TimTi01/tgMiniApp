@@ -1,8 +1,9 @@
 import { FC, useEffect } from 'react'
 import { Checkbox } from '../Checkbox/Checkbox'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { MainButton } from '@vkruglikov/react-telegram-web-app'
+import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app'
 import s from './lastPage.module.css'
+import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton'
 // import flyMoney from '../../static/flyMoney.gif'
 
 interface LastPage {
@@ -17,14 +18,14 @@ export const LastPage: FC<LastPage> = (props) => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if ('/tgMiniApp/waitingForPayment') {
+        if (location.pathname === '/tgMiniApp/waitingForPayment') {
             setTimeout(() => {
-                navigate('tgMiniApp/waitingForPayment-2')
-            }, 1000)
+                navigate('/tgMiniApp/waitingForPayment-2')
+            }, 2500)
         } else if (location.pathname === '/tgMiniApp/waitingForPayment-3') {
             setTimeout(() => {
-                navigate('tgMiniApp/waitingForPayment-4')
-            }, 1000)
+                navigate('/tgMiniApp/waitingForPayment-4')
+            }, 2500)
         }
     })
 
@@ -45,6 +46,12 @@ export const LastPage: FC<LastPage> = (props) => {
                 {subTitle && <div className={s.subTitle}>{subTitle}</div>}
             </div>
             {check && <Checkbox />}
+
+            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
+            <NextRouteButton navigateLink="/tgMiniApp/waitingForPayment-3"/>
+            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
+            { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 
             {location.pathname === '/tgMiniApp/waitingForPayment-2'
                 && <MainButton 

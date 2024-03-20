@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import s from './columnComponent.module.css';
 import { SwitchItem } from '../SwitchItem/SwitchItem';
 import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app';
+import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton';
 
 // Нужно подправить название типов
 const items = [
@@ -33,6 +34,11 @@ export const ColumnComponent: FC = ({}) => {
                     />
                 ))
             }
+
+            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
+            <NextRouteButton navigateLink="/tgMiniApp/3"/>
+            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
 
             <BackButton onClick={() => navigate(-1)}/>
             <MainButton 

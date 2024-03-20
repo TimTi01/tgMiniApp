@@ -5,11 +5,19 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { BackRouteButton } from '../TestRouteButton/TestRouteButton';
 
 export const FillingStationData: FC = () => {
+  Telegram.WebApp.MainButton.show();
+
+  
   const navigate = useNavigate();
   const location = useLocation()
+  
+  // Telegram.WebApp.BackButton.onClick(function() {
+  //   // Переходим на предыдущую страницу
+  //   history.back();
+  // });
 
   const handleClick = () => {
-    navigate("/tgMiniApp/1")
+    navigate("/tgMiniApp/2")
   }
 
   return (

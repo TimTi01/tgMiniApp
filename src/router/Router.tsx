@@ -73,3 +73,11 @@ export const router = createBrowserRouter([
 ], {
     // basename: "/tgMiniApp/"
 });
+
+// interface CheckRoutersProps {
+//     link: string
+// }
+
+// export const checkRouters = (props: CheckRoutersProps) => {
+//     const location = useLocation()
+// }

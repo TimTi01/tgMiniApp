@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { MyMap } from "../../Components/MyMap"
 import { useGeoLocation } from "../../hooks/hooks";
-import { BackButton, MainButton } from "@vkruglikov/react-telegram-web-app";
+import { BackButton } from "@vkruglikov/react-telegram-web-app";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { NextRouteButton, BackRouteButton } from "../../Components/TestRouteButton/TestRouteButton";
 
@@ -14,9 +14,9 @@ export const HomePage: FC = () => {
     console.log('location: ', location);
     console.log('location.pathname: ', location.pathname);
 
-    const handleClick = () => {
-        navigate("/tgMiniApp/1")
-    }
+    // const handleClick = () => {
+    //     navigate("/tgMiniApp/1")
+    // }
 
     return (
         <>
@@ -33,10 +33,10 @@ export const HomePage: FC = () => {
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
             { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 
-            <MainButton 
+            {/* <MainButton 
                 text="Заправиться тут" 
                 onClick={handleClick}
-            />
+            /> */}
         </>
     )
 }

@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { MyMap } from "../../Components/MyMap"
 import { useGeoLocation } from "../../hooks/hooks";
-import { BackButton, MainButton } from "@vkruglikov/react-telegram-web-app";
+import { MainButton } from "@vkruglikov/react-telegram-web-app";
 import { Outlet, useNavigate } from "react-router-dom";
 
 export const HomePage: FC = () => {
@@ -20,7 +20,6 @@ export const HomePage: FC = () => {
                 myGeo={myGeo} 
                 pointCoords={[59.940375, 30.313816]}
             />
-            <BackButton/>
             <Outlet />
 
             <MainButton 

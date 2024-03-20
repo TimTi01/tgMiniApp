@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useState } from "react"
 import { MyMap } from "../../Components/MyMap"
 import { useGeoLocation } from "../../hooks/hooks";
 import { BackButton } from "@vkruglikov/react-telegram-web-app";
@@ -10,6 +10,7 @@ export const HomePage: FC = () => {
     let myGeo = [geo.coordinates?.lat, geo.coordinates?.lng]
     const navigate = useNavigate()
     const location = useLocation()
+    const [state, setState] = useState(0)
 
     console.log('location: ', location);
     console.log('location.pathname: ', location.pathname);
@@ -21,6 +22,8 @@ export const HomePage: FC = () => {
     });
     Telegram.WebApp.BackButton.onClick(function() {
       // Переходим на предыдущую страницу
+    
+      setState(state + 1)
       navigate("/tgMiniApp/1")
     });
 
@@ -44,6 +47,7 @@ export const HomePage: FC = () => {
             { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 
             <div>{location.pathname}</div>
+            <div>{state}</div>
             {/* <MainButton 
                 text="Заправиться тут" 
                 onClick={handleClick}

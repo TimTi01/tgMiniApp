@@ -25,7 +25,7 @@ export const ColumnComponent: FC = ({}) => {
     Telegram.WebApp.MainButton.setParams({
         text: 'Дальше2',
     });
-    Telegram.WebApp.BackButton.onClick(function() {
+    Telegram.WebApp.MainButton.onClick(function() {
         navigate("/tgMiniApp/3")
     });
 

@@ -14,7 +14,7 @@ export const Payment: FC = () => {
     Telegram.WebApp.MainButton.setParams({
         text: 'Оплатить  1 977,10 ₽',
     });
-    Telegram.WebApp.BackButton.onClick(function() {
+    Telegram.WebApp.MainButton.onClick(function() {
         navigate("/tgMiniApp/waitingForPayment")
     });
 

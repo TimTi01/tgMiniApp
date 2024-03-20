@@ -18,7 +18,7 @@ export const SumAndLiters:FC = () => {
     Telegram.WebApp.MainButton.setParams({
         text: 'К оплате',
     });
-    Telegram.WebApp.BackButton.onClick(function() {
+    Telegram.WebApp.MainButton.onClick(function() {
         navigate("/tgMiniApp/payment")
     });
 

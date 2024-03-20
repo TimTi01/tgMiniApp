@@ -5,7 +5,6 @@ import { PaymentMethod } from "../PaymentMethod/PaymentMethod"
 import { Alert } from "../Alert/Alert"
 import { BackButton } from "@vkruglikov/react-telegram-web-app"
 import { useNavigate } from "react-router-dom"
-import { BackRouteButton, NextRouteButton } from "../TestRouteButton/TestRouteButton"
 
 export const Payment: FC = () => {
     const navigate = useNavigate();
@@ -26,15 +25,11 @@ export const Payment: FC = () => {
             <Alert />
 
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-            <NextRouteButton navigateLink="/tgMiniApp/waitingForPayment"/>
-            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+            {/* <NextRouteButton navigateLink="/tgMiniApp/waitingForPayment"/>
+            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
 
             <BackButton onClick={() => navigate(-1)}/>
-            {/* <MainButton 
-                text="Оплатить 1977 руб." 
-                onClick={() => navigate("/tgMiniApp/waitingForPayment")}
-            /> */}
         </div>
     )
 }

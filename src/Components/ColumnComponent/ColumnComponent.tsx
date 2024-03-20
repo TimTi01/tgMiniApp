@@ -2,10 +2,9 @@ import { FC } from 'react'
 import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
 import { useLocation, useNavigate } from 'react-router-dom';
-import s from './columnComponent.module.css';
 import { SwitchItem } from '../SwitchItem/SwitchItem';
 import { BackButton } from '@vkruglikov/react-telegram-web-app';
-import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton';
+import s from './columnComponent.module.css';
 
 // Нужно подправить название типов
 const items = [
@@ -23,7 +22,7 @@ export const ColumnComponent: FC = ({}) => {
 
     Telegram.WebApp.MainButton.show();
     Telegram.WebApp.MainButton.setParams({
-        text: 'Дальше2',
+        text: 'Дальше',
     });
     Telegram.WebApp.MainButton.onClick(function() {
         navigate("/tgMiniApp/3")
@@ -44,15 +43,11 @@ export const ColumnComponent: FC = ({}) => {
             }
 
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-            <NextRouteButton navigateLink="/tgMiniApp/3"/>
-            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+            {/* <NextRouteButton navigateLink="/tgMiniApp/3"/>
+            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
 
             <BackButton onClick={() => navigate(-1)}/>
-            {/* <MainButton 
-                text="Дальше" 
-                onClick={() => navigate("/tgMiniApp/3")}
-            /> */}
         </div>
     )
 }

@@ -3,7 +3,6 @@ import { Checkbox } from '../Checkbox/Checkbox'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app'
 import s from './lastPage.module.css'
-import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton'
 // import flyMoney from '../../static/flyMoney.gif'
 
 interface LastPage {
@@ -48,8 +47,8 @@ export const LastPage: FC<LastPage> = (props) => {
             {check && <Checkbox />}
 
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-            <NextRouteButton navigateLink="/tgMiniApp/waitingForPayment-3"/>
-            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+            {/* <NextRouteButton navigateLink="/tgMiniApp/waitingForPayment-3"/>
+            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
             { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 

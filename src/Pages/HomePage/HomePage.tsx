@@ -3,7 +3,6 @@ import { MyMap } from "../../Components/MyMap"
 import { useGeoLocation } from "../../hooks/hooks";
 import { BackButton } from "@vkruglikov/react-telegram-web-app";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { NextRouteButton, BackRouteButton } from "../../Components/TestRouteButton/TestRouteButton";
 
 export const HomePage: FC = () => {
     const geo = useGeoLocation(); 
@@ -14,7 +13,7 @@ export const HomePage: FC = () => {
 
     Telegram.WebApp.MainButton.show();
     Telegram.WebApp.MainButton.setParams({
-      text: 'Заправиться тут1',
+      text: 'Заправиться тут',
     });
     Telegram.WebApp.MainButton.onClick(function() {
       setState(state + 1)
@@ -31,17 +30,13 @@ export const HomePage: FC = () => {
             <Outlet />
 
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-            <NextRouteButton navigateLink="/tgMiniApp/1"/>
-            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+            {/* <NextRouteButton navigateLink="/tgMiniApp/1"/>
+            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
             { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 
-            <div>{location.pathname}</div>
-            <div>{state}</div>
-            {/* <MainButton 
-                text="Заправиться тут" 
-                onClick={handleClick}
-            /> */}
+            {/* <div>{location.pathname}</div>
+            <div>{state}</div> */}
         </>
     )
 }

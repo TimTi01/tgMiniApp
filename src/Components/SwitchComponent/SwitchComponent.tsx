@@ -3,9 +3,8 @@ import { SwitchItem } from '../SwitchItem/SwitchItem'
 import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
 import { useLocation, useNavigate } from 'react-router-dom'
-import s from './switchComponent.module.css'
 import { BackButton } from '@vkruglikov/react-telegram-web-app'
-import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton'
+import s from './switchComponent.module.css'
 
 const items = [
   {type: 'oil', oilType: '95+', price: 50},
@@ -25,15 +24,11 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
 
   Telegram.WebApp.MainButton.show();
   Telegram.WebApp.MainButton.setParams({
-    text: 'Дальше1',
+    text: 'Дальше',
   });
   Telegram.WebApp.MainButton.onClick(function() {
     navigate("/tgMiniApp/2")
   });
-
-  // const handleClick = () => {
-  //   navigate(props.link)
-  // }
 
   return (
     <div className={s.switchWrap}>
@@ -57,14 +52,10 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
         }
 
         {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-        <NextRouteButton navigateLink="/tgMiniApp/2"/>
-        { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
+        {/* <NextRouteButton navigateLink="/tgMiniApp/2"/>
+        { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
         
         <BackButton onClick={() => navigate(-1)}/>
-        {/* <MainButton 
-            text="Дальше" 
-            onClick={handleClick}
-        /> */}
     </div>
   )
 }

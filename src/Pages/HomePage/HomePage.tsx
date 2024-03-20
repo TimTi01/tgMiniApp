@@ -18,9 +18,9 @@ export const HomePage: FC = () => {
 
     Telegram.WebApp.MainButton.show();
     Telegram.WebApp.MainButton.setParams({
-      text: 'TEST1',
+      text: 'TEST1!',
     });
-    Telegram.WebApp.BackButton.onClick(function() {
+    Telegram.WebApp.MainButton.onClick(function() {
       // Переходим на предыдущую страницу
     
       setState(state + 1)

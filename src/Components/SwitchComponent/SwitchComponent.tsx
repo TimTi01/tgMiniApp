@@ -23,6 +23,10 @@ export const SwitchComponent: FC<SwitchItemProps> = (props) => {
   let lastChar = location.pathname[location.pathname.length - 1];
   const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate(props.link)
+  }
+
   return (
     <div className={s.switchWrap}>
         <PageNumber number={`${lastChar}/3`}/>
@@ -51,7 +55,7 @@ export const SwitchComponent: FC<SwitchItemProps> = (props) => {
         <BackButton onClick={() => navigate(-1)}/>
         <MainButton 
             text="Дальше" 
-            onClick={() => navigate(props.link)}
+            onClick={handleClick}
         />
     </div>
   )

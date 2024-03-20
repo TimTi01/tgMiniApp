@@ -39,6 +39,9 @@ export const SumAndLiters:FC = () => {
                 text="К оплате" 
                 onClick={() => navigate("/tgMiniApp/waitingForPayment")}
             /> */}
+
+            {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
+            {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`}
         </div>
     )
 }

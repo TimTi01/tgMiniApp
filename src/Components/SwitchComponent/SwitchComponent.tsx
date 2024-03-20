@@ -56,6 +56,9 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
         { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
         
         <BackButton onClick={() => navigate(-1)}/>
+
+        {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
+        {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`}
     </div>
   )
 }

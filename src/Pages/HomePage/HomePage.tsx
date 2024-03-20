@@ -15,7 +15,7 @@ export const HomePage: FC = () => {
     console.log('location.pathname: ', location.pathname);
 
     const handleClick = () => {
-        navigate("/tgMiniApp/2")
+        navigate("/tgMiniApp/1")
     }
 
     return (

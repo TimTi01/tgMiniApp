@@ -11,7 +11,7 @@ export const FillingStationData: FC = () => {
   const location = useLocation()
 
   const handleClick = () => {
-    navigate("/tgMiniApp/2")
+    navigate("/tgMiniApp/1")
   }
 
   return (

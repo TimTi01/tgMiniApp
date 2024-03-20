@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -9,17 +9,22 @@ import { Wrap } from '../Wrap/Wrap';
 
 // Нужно подправить название типов
 const items = [
-    {type: 'notOil', oilType: '1'},
-    {type: 'notOil', oilType: '2'},
-    {type: 'notOil', oilType: '3'},
-    {type: 'notOil', oilType: '5'},
-    {type: 'notOil', oilType: '6'}
+    {id: 1, type: 'notOil', oilType: '1'},
+    {id: 2, type: 'notOil', oilType: '2'},
+    {id: 3, type: 'notOil', oilType: '3'},
+    {id: 4, type: 'notOil', oilType: '5'},
+    {id: 5, type: 'notOil', oilType: '6'}
 ]
 
 export const ColumnComponent: FC = ({}) => {
     let location = useLocation();
     let lastChar = location.pathname[location.pathname.length - 1];
     const navigate = useNavigate();
+
+    const [activeItem, setActiveItem] = useState(1)
+    const handleItemClick = (id: number) => {
+      setActiveItem(id);
+    };
 
     Telegram.WebApp.MainButton.show();
     Telegram.WebApp.MainButton.setParams({
@@ -37,10 +42,13 @@ export const ColumnComponent: FC = ({}) => {
             {
                 items.map((item, idx) => (
                     <SwitchItem 
+                        id={idx}
                         key={idx}
                         type={item.type}
                         oilType={item.oilType}
-                        />
+                        active={item.id === activeItem}
+                        onClick={handleItemClick}
+                    />
                 ))
             }
 

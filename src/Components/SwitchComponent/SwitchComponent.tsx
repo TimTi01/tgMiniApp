@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { SwitchItem } from '../SwitchItem/SwitchItem'
 import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
@@ -8,10 +8,11 @@ import { BackButton } from '@vkruglikov/react-telegram-web-app'
 import { Wrap } from '../Wrap/Wrap'
 
 const items = [
-  {type: 'oil', oilType: '95+', price: 50},
-  {type: 'oil', oilType: '95+', price: 50},
-  {type: 'oil', oilType: '95+', price: 50},
-  {type: 'oil', oilType: '95+', price: 50}
+  {id: 1, type: 'oil', oilType: '95+', price: 50},
+  {id: 2, type: 'oil', oilType: '92+', price: 47},
+  {id: 3, type: 'oil', oilType: '95', price: 46},
+  {id: 4, type: 'oil', oilType: '92', price: 45},
+  {id: 5, type: 'oil', oilType: 'ДТ', price: 39}
 ]
 
 interface SwitchItemProps {
@@ -22,6 +23,10 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
   let location = useLocation();
   let lastChar = location.pathname[location.pathname.length - 1];
   const navigate = useNavigate();
+  const [activeItem, setActiveItem] = useState(1)
+  const handleItemClick = (id: number) => {
+    setActiveItem(id);
+  };
 
   Telegram.WebApp.MainButton.show();
   Telegram.WebApp.MainButton.setParams({
@@ -36,19 +41,17 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
       {/* <div className={s.switchWrap}> */}
         <PageNumber number={`${lastChar}/3`}/>
         <Title title={'Топливо'} />
-        <SwitchItem 
-          type={'oil'}
-          oilType={'9000+'}
-          price={49}
-          active={true}
-        />
         {
           items.map((item, idx) => (
               <SwitchItem 
+                  id={idx}
                   key={idx}
                   type={item.type}
                   oilType={item.oilType}
                   price={item.price}
+                  // @ts-ignore
+                  active={item.id === activeItem}
+                  onClick={handleItemClick}
               />
           ))
         }

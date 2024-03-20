@@ -1,11 +1,14 @@
 import { FC } from 'react'
 import s from './SwitchItem.module.css'
+import { useStore } from '../../store/store'
 
 interface SwitchItemProps {
+    id: number,
     type: string,
     oilType: string,
     price?: number,
-    active?: boolean 
+    active?: boolean,
+    onClick?: (type: number) => void, 
 }
 
 // Нужно зарефакторить после MPV
@@ -14,7 +17,20 @@ const activeStyles = {
     'background': '#d7e3f5'
 }
 export const SwitchItem: FC<SwitchItemProps> = (props) => {
-    const {type, oilType, price, active} = props
+    const {id, type, oilType, price, active, onClick} = props
+    const { setOilType, setRub } = useStore(state => state)
+
+    const handleClick = () => {
+        if (onClick) {
+          onClick(id + 1);
+
+          console.log(id);
+          console.log(oilType, price);
+          setOilType(oilType)
+          setRub(price)
+        }
+    };
+
     let priceInRub: string
 
     if (type === 'oil') {
@@ -32,6 +48,7 @@ export const SwitchItem: FC<SwitchItemProps> = (props) => {
     return (
         <div className={s.switchItemWrap} 
             style={active ? activeStyles : {} }
+            onClick={handleClick}
         >
             <div className={s.typeOil}>{oilType}</div>
             {/* @ts-ignore */}

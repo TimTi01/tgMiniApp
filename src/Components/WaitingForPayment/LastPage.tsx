@@ -20,11 +20,11 @@ export const LastPage: FC<LastPage> = (props) => {
         if (location.pathname === '/tgMiniApp/waitingForPayment') {
             setTimeout(() => {
                 navigate('/tgMiniApp/waitingForPayment-2')
-            }, 2500)
+            }, 3500)
         } else if (location.pathname === '/tgMiniApp/waitingForPayment-3') {
             setTimeout(() => {
                 navigate('/tgMiniApp/waitingForPayment-4')
-            }, 2500)
+            }, 3500)
         }
     })
 

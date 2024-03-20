@@ -28,6 +28,10 @@ export const LastPage: FC<LastPage> = (props) => {
         }
     })
 
+    const onClose = () => {
+        Telegram.WebApp.close()
+    }
+
     return (
         <div className={s.waitingForPaymentWrap}>
             <div className={s.container}>
@@ -56,6 +60,13 @@ export const LastPage: FC<LastPage> = (props) => {
                 && <MainButton 
                         text="Пистолет в баке" 
                         onClick={() => navigate("/tgMiniApp/waitingForPayment-3")}
+                    />
+            }
+
+            {location.pathname === '/tgMiniApp/waitingForPayment-4'
+                && <MainButton 
+                        text="Готово" 
+                        onClick={onClose}
                     />
             }
         </div>

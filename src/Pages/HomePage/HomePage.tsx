@@ -3,6 +3,7 @@ import { MyMap } from "../../Components/MyMap"
 import { useGeoLocation } from "../../hooks/hooks";
 import { BackButton } from "@vkruglikov/react-telegram-web-app";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import s from "./homePage.module.css"
 
 export const HomePage: FC = () => {
     const geo = useGeoLocation(); 
@@ -22,11 +23,13 @@ export const HomePage: FC = () => {
 
     return (
         <>
+          <div className={s.mapWrap}>
             <MyMap 
                 geo={geo} 
                 myGeo={myGeo} 
                 pointCoords={[59.940375, 30.313816]}
             />
+          </div>
             <Outlet />
 
             {/*NextRouteButton и BackRouteButton - тестовые кнопки */}

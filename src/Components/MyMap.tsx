@@ -26,8 +26,8 @@ export const MyMap: FC<MyMapProps> = (props) => {
                 options={{
                     suppressMapOpenBlock: true
                 }}
-                height={160}
-                width={390}
+                // height={160}
+                width={'100%'}
                 // modules={["control.FullscreenControl"]}
             >
                 <Placemark 

@@ -4,7 +4,8 @@ import { Title } from '../Title/Title'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { SwitchItem } from '../SwitchItem/SwitchItem';
 import { BackButton } from '@vkruglikov/react-telegram-web-app';
-import s from './columnComponent.module.css';
+// import s from './columnComponent.module.css';
+import { Wrap } from '../Wrap/Wrap';
 
 // Нужно подправить название типов
 const items = [
@@ -29,7 +30,8 @@ export const ColumnComponent: FC = ({}) => {
     });
 
     return (
-        <div className={s.columnWrap}>
+        // <div className={s.columnWrap}>
+        <Wrap>
             <PageNumber number={`${lastChar}/3`}/>
             <Title title={'Колонка'} />
             {
@@ -38,7 +40,7 @@ export const ColumnComponent: FC = ({}) => {
                         key={idx}
                         type={item.type}
                         oilType={item.oilType}
-                    />
+                        />
                 ))
             }
 
@@ -51,6 +53,7 @@ export const ColumnComponent: FC = ({}) => {
 
             {/* {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
             {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`} */}
-        </div>
+        </Wrap>
+        // </div>
     )
 }

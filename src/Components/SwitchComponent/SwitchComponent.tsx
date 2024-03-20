@@ -4,7 +4,8 @@ import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { BackButton } from '@vkruglikov/react-telegram-web-app'
-import s from './switchComponent.module.css'
+// import s from './switchComponent.module.css'
+import { Wrap } from '../Wrap/Wrap'
 
 const items = [
   {type: 'oil', oilType: '95+', price: 50},
@@ -31,7 +32,8 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
   });
 
   return (
-    <div className={s.switchWrap}>
+    <Wrap>
+      {/* <div className={s.switchWrap}> */}
         <PageNumber number={`${lastChar}/3`}/>
         <Title title={'Топливо'} />
         <SwitchItem 
@@ -59,6 +61,8 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
 
         {/* {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
         {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`} */}
-    </div>
+      {/* </div> */}
+    </Wrap>
+
   )
 }

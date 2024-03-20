@@ -5,8 +5,8 @@ import { Title } from '../Title/Title';
 import { GridButtons } from '../GridButtons/GridButtons';
 import { PriceDisplay } from '../PriceDisplay/PriceDisplay';
 import { Range } from '../Range/Range';
-import s from './sumAndLiters.module.css'
 import { BackButton } from '@vkruglikov/react-telegram-web-app';
+import { Wrap } from '../Wrap/Wrap';
 
 export const SumAndLiters:FC = () => {
     let location = useLocation();
@@ -22,7 +22,8 @@ export const SumAndLiters:FC = () => {
     });
 
     return (
-        <div className={s.sumAndLitersWrap}>
+        <Wrap>
+            {/* <div className={s.sumAndLitersWrap}> */}
             <PageNumber number={`${lastChar}/3`}/>
             <Title title={'Сумма и литры'} />
             <PriceDisplay />
@@ -42,6 +43,7 @@ export const SumAndLiters:FC = () => {
 
             {/* {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
             {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`} */}
-        </div>
+        {/* </div> */}
+        </Wrap>
     )
 }

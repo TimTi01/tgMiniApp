@@ -14,9 +14,9 @@ export const FillingStationData: FC = () => {
 
   Telegram.WebApp.MainButton.show();
   Telegram.WebApp.MainButton.setParams({
-    text: 'TEST1',
+    text: 'TEST11',
   });
-  Telegram.WebApp.BackButton.onClick(function() {
+  Telegram.WebApp.MainButton.onClick(function() {
     // Переходим на предыдущую страницу
     navigate("/tgMiniApp/1")
   });

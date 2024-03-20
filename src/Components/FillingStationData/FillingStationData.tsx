@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import s from './fillingStationData.module.css'
-import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app'
+import { BackButton } from '@vkruglikov/react-telegram-web-app'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BackRouteButton } from '../TestRouteButton/TestRouteButton';
 
@@ -8,9 +8,9 @@ export const FillingStationData: FC = () => {
   const navigate = useNavigate();
   const location = useLocation()
 
-  const handleClick = () => {
-    navigate("/tgMiniApp/1")
-  }
+  // const handleClick = () => {
+  //   navigate("/tgMiniApp/1")
+  // }
 
   return (
     <div className={s.wrap}>
@@ -28,10 +28,10 @@ export const FillingStationData: FC = () => {
         { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
         { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 
-        <MainButton 
+        {/* <MainButton 
           text="Заправиться тут" 
           onClick={handleClick}
-        />
+        /> */}
     </div>
   )
 }

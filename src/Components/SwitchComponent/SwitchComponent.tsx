@@ -4,7 +4,7 @@ import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
 import { useLocation, useNavigate } from 'react-router-dom'
 import s from './switchComponent.module.css'
-import { BackButton, MainButton } from '@vkruglikov/react-telegram-web-app'
+import { BackButton } from '@vkruglikov/react-telegram-web-app'
 import { BackRouteButton, NextRouteButton } from '../TestRouteButton/TestRouteButton'
 
 const items = [
@@ -18,14 +18,24 @@ interface SwitchItemProps {
   link: string,
 }
 
-export const SwitchComponent: FC<SwitchItemProps> = (props) => {
+export const SwitchComponent: FC<SwitchItemProps> = () => {
   let location = useLocation();
   let lastChar = location.pathname[location.pathname.length - 1];
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate(props.link)
-  }
+
+  Telegram.WebApp.MainButton.show();
+  Telegram.WebApp.MainButton.setParams({
+    text: 'TEST',
+  });
+  Telegram.WebApp.BackButton.onClick(function() {
+    // Переходим на предыдущую страницу
+    navigate("/tgMiniApp/2")
+  });
+
+  // const handleClick = () => {
+  //   navigate(props.link)
+  // }
 
   return (
     <div className={s.switchWrap}>
@@ -53,10 +63,10 @@ export const SwitchComponent: FC<SwitchItemProps> = (props) => {
         { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> }
         
         <BackButton onClick={() => navigate(-1)}/>
-        <MainButton 
+        {/* <MainButton 
             text="Дальше" 
             onClick={handleClick}
-        />
+        /> */}
     </div>
   )
 }

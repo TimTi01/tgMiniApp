@@ -13,7 +13,12 @@ const items = [
   {type: 'oil', oilType: '95+', price: 50},
   {type: 'oil', oilType: '95+', price: 50}
 ]
-export const SwitchComponent: FC = () => {
+
+interface SwitchItemProps {
+  link: string,
+}
+
+export const SwitchComponent: FC<SwitchItemProps> = (props) => {
   let location = useLocation();
   let lastChar = location.pathname[location.pathname.length - 1];
   const navigate = useNavigate();
@@ -46,7 +51,7 @@ export const SwitchComponent: FC = () => {
         <BackButton onClick={() => navigate(-1)}/>
         <MainButton 
             text="Дальше" 
-            onClick={() => navigate("/tgMiniApp/2")}
+            onClick={() => navigate(props.link)}
         />
     </div>
   )

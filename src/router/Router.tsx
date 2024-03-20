@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "1",
-                element: <SwitchComponent />
+                element: <SwitchComponent link={"/tgMiniApp/2"}/>
             },
             {
                 path: "2",

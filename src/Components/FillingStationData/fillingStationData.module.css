@@ -5,7 +5,8 @@
     align-items: center;
     height: 142px;
     width: 490px;
-    padding: 0 15px;
+    width: 371px;
+    /* padding: 0 15px; */
 }
 
 .stationNumber {

@@ -31,8 +31,8 @@ export const Payment: FC = () => {
 
             <BackButton onClick={() => navigate(-1)}/>
 
-            {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
-            {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`}
+            {/* {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
+            {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`} */}
         </div>
     )
 }

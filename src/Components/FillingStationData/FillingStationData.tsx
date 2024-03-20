@@ -44,8 +44,8 @@ export const FillingStationData: FC = () => {
           onClick={handleClick}
         /> */}
 
-        {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
-        {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`}
+        {/* {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
+        {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`} */}
     </div>
   )
 }

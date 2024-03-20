@@ -20,8 +20,6 @@ export const HomePage: FC = () => {
       navigate("/tgMiniApp/1")
     });
 
-    console.log(Telegram.WebApp.viewportHeight)
-
     return (
         <>
             <MyMap 
@@ -40,8 +38,8 @@ export const HomePage: FC = () => {
             {/* <div>{location.pathname}</div>
             <div>{state}</div> */}
 
-            {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
-            {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`}
+            {/* {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
+            {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`} */}
         </>
     )
 }

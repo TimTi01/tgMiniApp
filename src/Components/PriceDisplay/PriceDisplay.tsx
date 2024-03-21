@@ -19,6 +19,7 @@ export const PriceDisplay: FC = () => {
         <div className={s.priceDisplayWrap}>
             <div className={s.liters}>{litrs} л</div>
             <div className={s.slash}>/</div>
+            
             <div className={s.rubles}>{test}</div>
             <div className={s.rubles}>{isFormatter()}</div>
             <div className={s.rubles}>{price}</div>

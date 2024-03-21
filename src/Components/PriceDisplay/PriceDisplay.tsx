@@ -6,11 +6,13 @@ import { formater } from '../../hooks/hooks'
 export const PriceDisplay: FC = () => {
     let {litrs, price} = useStore((state) => state)
 
+    let fromPrice = formater(price)
+
     return (
         <div className={s.priceDisplayWrap}>
             <div className={s.liters}>{litrs} л</div>
             <div className={s.slash}>/</div>
-            <div className={s.rubles}>{formater(price)}</div>
+            <div className={s.rubles}>{fromPrice}</div>
         </div>
     )
 }

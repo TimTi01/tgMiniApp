@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import s from './switchColumnItem.module.css'
-import { useStore } from '../../store/store'
+// import { useStore } from '../../store/store'
 
 interface SwitchColumnItemProps {
     id: number,
@@ -18,17 +18,17 @@ const activeStyles = {
 }
 export const SwitchColumnItem: FC<SwitchColumnItemProps> = (props) => {
     const {id, type, oilType, price, active, onClick} = props
-    const { setOilType, setRub, setPrice } = useStore(state => state)
+    // const { setOilType, setRub, setPrice } = useStore(state => state)
 
     const handleClick = () => {
         if (onClick) {
           onClick(id + 1);
 
-          console.log(id);
-          console.log(oilType, price);
-          setOilType(oilType)
-          setRub(price)
-          setPrice(price)
+        //   console.log(id);
+        //   console.log(oilType, price);
+        //   setOilType(oilType)
+        //   setRub(price)
+        //   setPrice(price)
         }
     };
 

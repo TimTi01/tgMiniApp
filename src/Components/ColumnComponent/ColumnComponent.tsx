@@ -50,7 +50,7 @@ export const ColumnComponent: FC = ({}) => {
     return (
         // <div className={s.columnWrap}>
         <Wrap>
-            <div>{`${litrs}, ${test}, ${test}, ${isFormatter()}`}</div>
+            <div>{`${litrs}, ${test}, ${price}, ${isFormatter()}`}</div>
             <PageNumber number={`${lastChar}/3`}/>
             <Title title={'Колонка'} />
             {

@@ -18,7 +18,7 @@ const activeStyles = {
 }
 export const SwitchItem: FC<SwitchItemProps> = (props) => {
     const {id, type, oilType, price, active, onClick} = props
-    const { setOilType, setRub } = useStore(state => state)
+    const { setOilType, setRub, setPrice } = useStore(state => state)
 
     const handleClick = () => {
         if (onClick) {
@@ -28,6 +28,7 @@ export const SwitchItem: FC<SwitchItemProps> = (props) => {
           console.log(oilType, price);
           setOilType(oilType)
           setRub(price)
+          setPrice(price)
         }
     };
 

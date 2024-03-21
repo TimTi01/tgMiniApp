@@ -27,15 +27,7 @@ export const Payment: FC = () => {
             <PaymentMethod />
             <Alert />
 
-            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-            {/* <NextRouteButton navigateLink="/tgMiniApp/waitingForPayment"/>
-            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
-            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-
             <BackButton onClick={() => navigate(-1)}/>
-
-            {/* {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
-            {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`} */}
         </div>
     )
 }

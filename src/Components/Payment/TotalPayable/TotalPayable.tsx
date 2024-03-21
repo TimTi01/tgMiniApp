@@ -11,7 +11,8 @@ export const TotalPayable: FC = () => {
 
       <div className={s.priceWrap}>
         <div className={s.calculation}>{`${oilType} ${formater(rub)} x ${litrs} л`}</div>
-        <div className={s.price}>2 000,00 ₽</div>
+        <div className={s.price}>{formater(rub * litrs)}</div>
+        {/* <div className={s.price}>2 000,00 ₽</div> */}
       </div>
 
       <div className={s.discountWrap}>
@@ -21,7 +22,7 @@ export const TotalPayable: FC = () => {
 
       <div className={s.totalWrap}>
         <div className={s.titleTotal}>Итого</div>
-        <div className={s.totalPrice}>1 977,10 ₽</div>
+        <div className={s.totalPrice}>{formater((rub * litrs) - 22.9)}</div>
         <div className={s.totalPriceWithDicount}>-2 000,00 ₽</div>
       </div>
     </div>

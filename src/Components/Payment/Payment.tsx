@@ -10,11 +10,11 @@ import { formater } from "../../hooks/hooks"
 
 export const Payment: FC = () => {
     const navigate = useNavigate();
-    let rub = useStore((state) => state.rub)
+    let {rub, litrs} = useStore((state) => state)
 
     Telegram.WebApp.MainButton.show();
     Telegram.WebApp.MainButton.setParams({
-        text: `Оплатить ${formater(rub)}`  ,
+        text: `Оплатить ${formater((rub * litrs) - 22.9)}`,
     });
     Telegram.WebApp.MainButton.onClick(function() {
         navigate("/tgMiniApp/waitingForPayment")

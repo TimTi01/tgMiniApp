@@ -23,7 +23,7 @@ export const TotalPayable: FC = () => {
       <div className={s.totalWrap}>
         <div className={s.titleTotal}>Итого</div>
         <div className={s.totalPrice}>{formater((rub * litrs) - 22.9)}</div>
-        <div className={s.totalPriceWithDicount}>-2 000,00 ₽</div>
+        <div className={s.totalPriceWithDicount}>{formater(rub * litrs)}</div>
       </div>
     </div>
   )

@@ -23,9 +23,7 @@ export const SwitchItem: FC<SwitchItemProps> = (props) => {
     const handleClick = () => {
         if (onClick) {
           onClick(id + 1);
-
-          console.log(id);
-          console.log(oilType, price);
+          
           setOilType(oilType)
           setRub(price)
           setPrice(price)

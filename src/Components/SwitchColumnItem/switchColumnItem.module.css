@@ -1,0 +1,22 @@
+.switchItemWrap {
+    display: flex;
+    background: #ffffff;
+    height: 54px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    margin: 5px 0;
+    padding: 0 16px;
+    border: 3px solid #fff;
+}
+
+.typeOil {
+    color: #007AFF;
+    font-size: 17px;
+    font-weight: 590;
+}
+
+.price {
+    font-size: 17px;
+    font-weight: 590;
+}

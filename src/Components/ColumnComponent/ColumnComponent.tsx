@@ -2,7 +2,8 @@ import { FC, useState } from 'react'
 import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
 import { useLocation, useNavigate } from 'react-router-dom';
-import { SwitchItem } from '../SwitchItem/SwitchItem';
+// import { SwitchItem } from '../SwitchItem/SwitchItem';
+import { SwitchColumnItem } from '../SwitchColumnItem/SwitchColumnItem';
 import { BackButton } from '@vkruglikov/react-telegram-web-app';
 // import s from './columnComponent.module.css';
 import { Wrap } from '../Wrap/Wrap';
@@ -41,7 +42,7 @@ export const ColumnComponent: FC = ({}) => {
             <Title title={'Колонка'} />
             {
                 items.map((item, idx) => (
-                    <SwitchItem 
+                    <SwitchColumnItem 
                         id={idx}
                         key={idx}
                         type={item.type}

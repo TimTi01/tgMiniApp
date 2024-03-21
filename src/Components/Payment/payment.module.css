@@ -1,9 +1,11 @@
 .paymentWrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: flex-start;
     align-items: center;
-    min-height: 142px;
+    /* min-height: 142px; */
+    height: 625px;
     padding: 20px 16px;
     background: #efeff4;
 }
@@ -13,4 +15,10 @@
     font-size: 13px;
     font-weight: 400;
     color: #8E8E93;    
+}
+
+.alertWrap {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
 }

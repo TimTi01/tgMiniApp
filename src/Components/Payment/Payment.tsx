@@ -25,7 +25,9 @@ export const Payment: FC = () => {
             <div className={s.paymentTitle}>ПОДТВЕРЖДЕНИЕ ЗАКАЗА</div>
             <TotalPayable />
             <PaymentMethod />
-            <Alert />
+            <div className={s.alertWrap}>
+                <Alert />
+            </div>
 
             <BackButton onClick={() => navigate(-1)}/>
         </div>

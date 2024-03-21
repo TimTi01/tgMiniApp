@@ -1,12 +1,16 @@
 import { FC } from 'react'
 import s from './totalPayable.module.css'
+import { useStore } from '../../../store/store'
+import { formater } from '../../../hooks/hooks'
 
 export const TotalPayable: FC = () => {
+  const {oilType, litrs, rub} = useStore((state) => state)
+
   return (
     <div className={s.totalPayableWrap}>
 
       <div className={s.priceWrap}>
-        <div className={s.calculation}>95+ 50,00 ₽ x 40 л</div>
+        <div className={s.calculation}>{`${oilType} ${formater(rub)} x ${litrs} л`}</div>
         <div className={s.price}>2 000,00 ₽</div>
       </div>
 

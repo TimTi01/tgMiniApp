@@ -5,13 +5,16 @@ import { PaymentMethod } from "../PaymentMethod/PaymentMethod"
 import { Alert } from "../Alert/Alert"
 import { BackButton } from "@vkruglikov/react-telegram-web-app"
 import { useNavigate } from "react-router-dom"
+import { useStore } from "../../store/store"
+import { formater } from "../../hooks/hooks"
 
 export const Payment: FC = () => {
     const navigate = useNavigate();
+    let rub = useStore((state) => state.rub)
 
     Telegram.WebApp.MainButton.show();
     Telegram.WebApp.MainButton.setParams({
-        text: 'Оплатить  1 977,10 ₽',
+        text: `Оплатить ${formater(rub)}`  ,
     });
     Telegram.WebApp.MainButton.onClick(function() {
         navigate("/tgMiniApp/waitingForPayment")

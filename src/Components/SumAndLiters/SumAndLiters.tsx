@@ -23,27 +23,13 @@ export const SumAndLiters:FC = () => {
 
     return (
         <Wrap>
-            {/* <div className={s.sumAndLitersWrap}> */}
             <PageNumber number={`${lastChar}/3`}/>
             <Title title={'Сумма и литры'} />
             <PriceDisplay />
             <Range />
             <GridButtons />
 
-            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-            {/* <NextRouteButton navigateLink="/tgMiniApp/payment"/>
-            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
-            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-
             <BackButton onClick={() => navigate(-1)}/>
-            {/* <MainButton 
-                text="К оплате" 
-                onClick={() => navigate("/tgMiniApp/waitingForPayment")}
-            /> */}
-
-            {/* {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
-            {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`} */}
-        {/* </div> */}
         </Wrap>
     )
 }

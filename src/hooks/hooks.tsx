@@ -1,29 +1,5 @@
 import { useEffect, useState } from "react";
 
-// const tg = Telegram.WebApp;
-
-// export function useTelegram() {
-
-//     const onClose = () => {
-//         tg.close()
-//     }
-
-//     const onToggleButton = () => {
-//         if(tg.MainButton.isVisible) {
-//             tg.MainButton.hide();
-//         } else {
-//             tg.MainButton.show();
-//         }
-//     }
-    
-//     return {
-//         onClose,
-//         onToggleButton,
-//         tg,
-//         user: tg.initDataUnsafe?.user
-//     }
-// }
-
 interface Coordinates {
   lat: number | string;
   lng: number | string;
@@ -101,3 +77,16 @@ export const useDistance = (ymaps: any, myCoords: (string | number | undefined)[
 
   return distance;
 };
+
+
+export const formater = (num: number) => {
+  const form = new Intl.NumberFormat('ru-RU', {
+    style: 'currency',
+    currency: 'RUB',
+    minimumFractionDigits: 2
+  });
+  
+  let formattedNumber = form.format(num);
+
+  return formattedNumber
+}

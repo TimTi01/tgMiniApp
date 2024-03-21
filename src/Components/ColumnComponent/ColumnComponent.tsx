@@ -7,6 +7,8 @@ import { SwitchColumnItem } from '../SwitchColumnItem/SwitchColumnItem';
 import { BackButton } from '@vkruglikov/react-telegram-web-app';
 // import s from './columnComponent.module.css';
 import { Wrap } from '../Wrap/Wrap';
+import { useStore } from '../../store/store';
+import { formater } from '../../hooks/hooks';
 
 // Нужно подправить название типов
 const items = [
@@ -21,6 +23,16 @@ export const ColumnComponent: FC = ({}) => {
     let location = useLocation();
     let lastChar = location.pathname[location.pathname.length - 1];
     const navigate = useNavigate();
+
+
+    
+    let {litrs, price} = useStore((state) => state)
+    let test = formater(price)
+    const isFormatter = () => {
+        let fromPrice = formater(price)
+
+        return fromPrice
+    }
 
     const [activeItem, setActiveItem] = useState(1)
     const handleItemClick = (id: number) => {
@@ -38,6 +50,7 @@ export const ColumnComponent: FC = ({}) => {
     return (
         // <div className={s.columnWrap}>
         <Wrap>
+            <div>{`${litrs}, ${test}, ${test}, ${isFormatter()}`}</div>
             <PageNumber number={`${lastChar}/3`}/>
             <Title title={'Колонка'} />
             {

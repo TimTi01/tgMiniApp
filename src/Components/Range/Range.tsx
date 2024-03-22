@@ -4,10 +4,8 @@ import { useStore } from '../../store/store'
 
 export const Range: FC = () => {
   const seLitrs = useStore((state) => state.setLitrs)
-  // const setRub = useStore((state) => state.setRub)
   const setPrice = useStore((state) => state.setPrice)
-  const litrs = useStore((state) => state.litrs)
-  const rub = useStore((state) => state.rub)
+  const {rub, litrs} = useStore((state) => state)
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     seLitrs(Number(e.target.value))

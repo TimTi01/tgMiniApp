@@ -8,7 +8,7 @@ export const Checkbox: FC = () => {
             <input 
                 id="cbx" 
                 className={s.inpCbx} 
-                type="checkbox" 
+                type="checkbox"
             />
             <label 
                 className={s.cbx} 

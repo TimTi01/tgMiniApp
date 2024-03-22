@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+// import { useNavigate } from 'react-router-dom';
 
 interface Coordinates {
   lat: number | string;
@@ -89,4 +90,30 @@ export const formater = (num: number) => {
   let formattedNumber = form.format(num);
 
   return formattedNumber
+}
+
+type ButtonParams = {
+  text: string;
+  onClick: () => void;
+};
+
+export const useTelegram = (buttonParams: ButtonParams) => {
+  // const navigate = useNavigate();
+
+  const onClose = () => {
+    Telegram.WebApp.close();
+  }
+
+  const showMainButton = () => {
+    Telegram.WebApp.MainButton.show();
+    Telegram.WebApp.MainButton.setParams({
+      text: buttonParams.text,
+    });
+    Telegram.WebApp.MainButton.onClick(buttonParams.onClick);
+  }
+
+  return {
+    onClose,
+    showMainButton
+  }
 }

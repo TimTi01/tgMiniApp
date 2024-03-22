@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import s from './SwitchItem.module.css'
 import { useStore } from '../../store/store'
+import { formater } from '../../hooks/hooks'
 
 interface SwitchItemProps {
     id: number,
@@ -30,20 +31,6 @@ export const SwitchItem: FC<SwitchItemProps> = (props) => {
         }
     };
 
-    let priceInRub: string
-
-    if (type === 'oil') {
-        const formatInRub = new Intl.NumberFormat('ru-RU', {
-            style: 'currency',
-            currency: 'RUB',
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-        
-        // @ts-ignore
-        priceInRub = formatInRub.format(price);
-    }
-
     return (
         <div className={s.switchItemWrap} 
             style={active ? activeStyles : {} }
@@ -51,7 +38,7 @@ export const SwitchItem: FC<SwitchItemProps> = (props) => {
         >
             <div className={s.typeOil}>{oilType}</div>
             {/* @ts-ignore */}
-            {type === 'oil' && <div className={s.price}>{ priceInRub }</div>}
+            {type === 'oil' && <div className={s.price}>{ formater(price) }</div>}
         </div>
     )
 }

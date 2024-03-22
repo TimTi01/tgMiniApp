@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { SwitchItem } from '../SwitchItem/SwitchItem'
 import { PageNumber } from '../PageNumber/PageNumber'
 import { Title } from '../Title/Title'
@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { BackButton } from '@vkruglikov/react-telegram-web-app'
 // import s from './switchComponent.module.css'
 import { Wrap } from '../Wrap/Wrap'
+import { useTelegram } from '../../hooks/hooks'
 
 const items = [
   {id: 1, type: 'oil', oilType: '95+', price: 50},
@@ -23,22 +24,31 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
   let location = useLocation();
   let lastChar = location.pathname[location.pathname.length - 1];
   const navigate = useNavigate();
+  
+  const {showMainButton} = useTelegram({
+    text: 'Дальше',
+    onClick: () => navigate("/tgMiniApp/2")
+  })
+
   const [activeItem, setActiveItem] = useState(1)
   const handleItemClick = (id: number) => {
     setActiveItem(id);
   };
 
-  Telegram.WebApp.MainButton.show();
-  Telegram.WebApp.MainButton.setParams({
-    text: 'Дальше',
-  });
-  Telegram.WebApp.MainButton.onClick(function() {
-    navigate("/tgMiniApp/2")
-  });
+  useEffect(() => {
+    showMainButton();
+  }, []);
+
+  // Telegram.WebApp.MainButton.show();
+  // Telegram.WebApp.MainButton.setParams({
+  //   text: 'Дальше',
+  // });
+  // Telegram.WebApp.MainButton.onClick(function() {
+  //   navigate("/tgMiniApp/2")
+  // });
 
   return (
     <Wrap>
-      {/* <div className={s.switchWrap}> */}
         <PageNumber number={`${lastChar}/3`}/>
         <Title title={'Топливо'} />
         {
@@ -55,16 +65,8 @@ export const SwitchComponent: FC<SwitchItemProps> = () => {
               />
           ))
         }
-
-        {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-        {/* <NextRouteButton navigateLink="/tgMiniApp/2"/>
-        { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
         
         <BackButton onClick={() => navigate(-1)}/>
-
-        {/* {`viewportHeight: ${Telegram.WebApp.viewportHeight}`}
-        {`viewportStableHeight: ${Telegram.WebApp.viewportStableHeight}`} */}
-      {/* </div> */}
     </Wrap>
 
   )

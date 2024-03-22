@@ -9,13 +9,14 @@ interface GridButtonProps {
 
 export const GridButton: FC<GridButtonProps> = (props) => {
     const { buttonText, count } = props
-    const setLitrs = useStore((state) => state.setLitrs)
-    const setRub = useStore((state) => state.setRub)
+    // const setLitrs = useStore((state) => state.setLitrs)
+    const {setRub, setLitrs} = useStore((state) => state)
 
     const handleClick = (count: number) => {
         if (count === 20) {
             setLitrs(20)
             setRub(1000)
+            // setPrice(1000)
         } else if (count === 30) {
             setLitrs(30)
             setRub(1500)

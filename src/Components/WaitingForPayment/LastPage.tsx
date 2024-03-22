@@ -49,11 +49,7 @@ export const LastPage: FC<LastPage> = (props) => {
                 {subTitle && <div className={s.subTitle}>{subTitle}</div>}
             </div>
             {check && <Checkbox />}
-
-            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
-            {/* <NextRouteButton navigateLink="/tgMiniApp/waitingForPayment-3"/>
-            { location.pathname !== "/tgMiniApp/" && <BackRouteButton/> } */}
-            {/*NextRouteButton и BackRouteButton - тестовые кнопки */}
+            
             { location.pathname !== "/tgMiniApp/" && <BackButton onClick={() => navigate(-1)}/> }
 
             {location.pathname === '/tgMiniApp/waitingForPayment-2'
